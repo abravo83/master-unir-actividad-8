@@ -1,4 +1,13 @@
-node_modules/
-.env
+# Ignore editor config file
 .vscode/
+
+
+# Ignore node main files
+node_modules/
 package-lock.json
+
+# Ignore environment file
+.env
+
+# Ignore API testing file
+peticiones.rest
