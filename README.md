@@ -142,7 +142,7 @@ _X means none, nothing_
 
 - Answer: Returns the new Autor object with its Id included
 
-### Delete a Post (Also removes every post of this Post)
+### Delete a Post
 
 - Action/Route: DELETE /api/posts/id (where id is a number that identifies the post)
 - Body: X
