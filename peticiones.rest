@@ -7,7 +7,7 @@
 ### Obtener todos los autores / Obtain all authors
 GET {{url}}/autores
 
-### Obtener un autor
+### Obtener un autor / Obtain an author
 GET {{url}}/autores/2
 
 ### Crear un nuevo autor / Create a new author -- Devuelve el nuevo autor con su id
@@ -40,17 +40,17 @@ DELETE {{url}}/autores/7
 ##  Posts  ##
 #############
 
-### Obtener todos los posts
+### Obtener todos los posts / get all posts -- Devuelve todos los posts
 GET {{url}}/posts
 
 ### Obtener un post
 GET {{url}}/posts/2
 
-### Obtener los posts de un autor
+### Obtener los posts de un autor / Obtain posts of an author
 GET {{url}}/posts/autor/3
 
 
-### Crear nuevo post
+### Crear nuevo post / Create post -- Devuelve el post creado
 POST {{url}}/posts
 Content-Type: application/json
 
