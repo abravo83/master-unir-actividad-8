@@ -36,7 +36,7 @@ async function updateAutor(id, { nombre, email, imagen }) {
 }
 
 async function dropAutor(id) {
-  const [resultPosts, resultAutores] = await Promise.all([
+  const [[resultPosts], [resultAutores]] = await Promise.all([
     pool.query(`DELETE FROM posts WHERE autor_id = ?`, [id]),
     pool.query(`DELETE FROM autores WHERE id = ?`, [id]),
   ]);
