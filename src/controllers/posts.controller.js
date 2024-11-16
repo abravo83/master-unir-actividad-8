@@ -82,9 +82,12 @@ const createPostCtrl = async (req, res, next) => {
 const deletePostCtrl = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const [result] = await dropPost(id);
+    const result = await dropPost(id);
 
-    res.json(result);
+    if (!result) {
+      return res.status(400).json({ message: "Error: El post no existe" });
+    }
+    res.json({ message: "Post eliminado" });
     //   --
   } catch (error) {
     next(error);
