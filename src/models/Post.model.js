@@ -52,10 +52,13 @@ const createPost = async ({
   return post[0];
 };
 
-const upatePost = async (id, { titulo, descripcion, categoria, autor_id }) => {
+const updatePost = async (
+  id,
+  { titulo, descripcion, categoria, texto, autor_id }
+) => {
   const [result] = await pool.query(
-    "UPDATE posts SET titulo = ?, descripcion = ?, categoria = ?, autor_id = ? WHERE posts.id = ?",
-    [titulo, descripcion, categoria, autor_id, id]
+    "UPDATE posts SET titulo = ?, descripcion = ?, categoria = ?, texto = ?, autor_id = ? WHERE posts.id = ?",
+    [titulo, descripcion, categoria, texto, autor_id, id]
   );
 
   if (result.affectedRows === 0) {
@@ -84,6 +87,6 @@ module.exports = {
   getPostByAutorId,
   getPostById,
   createPost,
-  upatePost,
+  updatePost,
   dropPost,
 };
