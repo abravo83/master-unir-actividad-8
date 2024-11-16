@@ -62,13 +62,21 @@ const putAutor = async (req, res, next) => {
 const deleteAutor = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const deleted = await dropAutor(id);
+    const deleteObjectMessage = await dropAutor(id);
 
-    if (deleted) {
-      return res.json({ message: "Autor eliminado" });
+    if (!deleteObjectMessage) {
+      return res.status(400).json({ message: "Error al eliminar el autor" });
     }
 
-    return res.status(400).json({ message: "Error al eliminar el autor" });
+    if (deleteObjectMessage.autores === 1) {
+      return res.json({
+        message: `Autor eliminado, Tambien se eliminaron ${deleteObjectMessage.posts} posts de este autor`,
+      });
+    }
+
+    return res.status(400).json({
+      message: `Error al eliminar el autor. Se eliminaron ${deleteObjectMessage.autores} autores y ${deleteObjectMessage.posts} posts`,
+    });
   } catch (error) {
     next(error);
   }
