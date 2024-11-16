@@ -1,15 +1,15 @@
 const pool = require("../config/db");
 
 const getAllPosts = async () => {
-  const [rows] = await pool.query(
-    "SELECT * FROM posts INNER JOIN autores ON posts.autor_id = autores.id"
+  const [result] = await pool.query(
+    "SELECT posts.*, autores.imagen autor_imagen, autores.email autor_email, autores.nombre autor_nombre FROM posts INNER JOIN autores ON posts.autor_id = autores.id"
   );
-  return rows;
+  return result;
 };
 
 const getPostByAutorId = async (id) => {
   const [rows] = await pool.query(
-    "SELECT * FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE autor_id = ?",
+    "SELECT posts.*, autores.imagen autor_imagen, autores.email autor_email, autores.nombre autor_nombre FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE autor_id = ?",
     [id]
   );
 
@@ -18,17 +18,23 @@ const getPostByAutorId = async (id) => {
 
 const getPostById = async (id) => {
   const [resultado] = await pool.query(
-    "SELECT * FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE id = ?",
+    "SELECT posts.*, autores.imagen autor_imagen, autores.email autor_email, autores.nombre autor_nombre FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE posts.id = ?",
     [id]
   );
 
   return resultado || null;
 };
 
-const createPost = async ({ titulo, descripcion, categoria, autor_id }) => {
+const createPost = async ({
+  titulo,
+  descripcion,
+  texto,
+  categoria,
+  autor_id,
+}) => {
   const [result] = await pool.query(
-    "INSERT INTO posts (titulo, descripcion, fecha_creacion, categoria, autor_id) VALUES (?, ?, NOW(), ?, ?)",
-    [titulo, descripcion, categoria, autor_id]
+    "INSERT INTO posts (titulo, descripcion, texto, fecha_creacion, categoria, autor_id) VALUES (?, ?, ?, NOW(), ?, ?)",
+    [titulo, descripcion, texto, categoria, autor_id]
   );
 
   if (result.affectedRows === 0) {
@@ -36,19 +42,19 @@ const createPost = async ({ titulo, descripcion, categoria, autor_id }) => {
   }
 
   const [post] = await pool.query(
-    "SELECT * FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE id = ?",
+    "SELECT posts.*, autores.imagen autor_imagen, autores.email autor_email, autores.nombre autor_nombre FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE posts.id = ?",
     [result.insertId]
   );
   if (!post[0]) {
     return null;
   }
 
-  return result;
+  return post[0];
 };
 
 const upatePost = async (id, { titulo, descripcion, categoria, autor_id }) => {
   const [result] = await pool.query(
-    "UPDATE posts SET titulo = ?, descripcion = ?, categoria = ?, autor_id = ? WHERE id = ?",
+    "UPDATE posts SET titulo = ?, descripcion = ?, categoria = ?, autor_id = ? WHERE posts.id = ?",
     [titulo, descripcion, categoria, autor_id, id]
   );
 
@@ -56,7 +62,10 @@ const upatePost = async (id, { titulo, descripcion, categoria, autor_id }) => {
     return null;
   }
 
-  const [post] = await pool.query("SELECT * FROM posts WHERE id = ?", [id]);
+  const [post] = await pool.query(
+    "SELECT posts.*, autores.imagen autor_imagen, autores.email autor_email, autores.nombre autor_nombre FROM posts INNER JOIN autores ON posts.autor_id = autores.id WHERE posts.id = ?",
+    [id]
+  );
   if (!post[0]) {
     return null;
   }
