@@ -2,6 +2,8 @@ const {
   getAllAutores,
   createAutor,
   getAutorById,
+  updateAutor,
+  dropAutor,
 } = require("../models/Autor.model");
 
 const getAutores = async (req, res, next) => {
