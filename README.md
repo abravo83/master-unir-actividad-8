@@ -56,11 +56,15 @@ _X means none, nothing_
 
 - Action/Route: POST /api/autores
 - Body:
+
+```
   {
   "nombre": string,
   "email": string,
   "imagen": string
   }
+```
+
 - Headers: Content-Type: application/json
 
 - Answer: Returns the new Autor object with its Id included
@@ -69,11 +73,15 @@ _X means none, nothing_
 
 - Action/Route: PUT /api/autores/id (where id is a number that identifies the author)
 - Body:
+
+```
   {
   "nombre": string,
   "email": string,
   "imagen": string
   }
+```
+
 - Headers: Content-Type: application/json
 
 - Answer: Returns the new Autor object with its Id included
@@ -116,6 +124,8 @@ _X means none, nothing_
 
 - Action/Route: POST /api/posts
 - Body:
+
+```
   {
   "titulo": string,
   "descripcion": string,
@@ -123,6 +133,8 @@ _X means none, nothing_
   "texto": string,
   "autor_id": number (id of the author in autores table)
   }
+```
+
 - Headers: Content-Type: application/json
 
 - Answer: Returns the new Post object with its Id included
@@ -131,6 +143,8 @@ _X means none, nothing_
 
 - Action/Route: PUT /api/posts/id (where id is a number that identifies the post)
 - Body:
+
+```
   {
   "titulo": string,
   "descripcion": string,
@@ -138,6 +152,8 @@ _X means none, nothing_
   "texto": string,
   "autor_id": number (id of the author in autores table)
   }
+```
+
 - Headers: Content-Type: application/json
 
 - Answer: Returns the new Autor object with its Id included
