@@ -8,7 +8,7 @@ const {
 
 const getPostsCtrl = async (req, res, next) => {
   try {
-    const [result] = await getAllPosts();
+    const result = await getAllPosts();
 
     res.json(result);
     //   --
@@ -20,7 +20,7 @@ const getPostsCtrl = async (req, res, next) => {
 const getPostsByAutorIdCtrl = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const [result] = await getPostByAutorId(id);
+    const result = await getPostByAutorId(id);
 
     res.json(result);
     //   --
@@ -61,10 +61,11 @@ const updatePostCtrl = async (req, res, next) => {
 
 const createPostCtrl = async (req, res, next) => {
   try {
-    const { titulo, descripcion, categoria, autor_id } = req.body;
-    const [result] = await createPost({
+    const { titulo, descripcion, texto, categoria, autor_id } = req.body;
+    const result = await createPost({
       titulo,
       descripcion,
+      texto,
       categoria,
       autor_id,
     });
