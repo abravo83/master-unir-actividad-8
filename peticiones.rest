@@ -69,13 +69,13 @@ Content-Type: application/json
     "autor_id": 2
 }
 
-### Actualizar post / Update post
-POST {{url}}/posts
+### Actualizar post / Update post -- Devuelve el post actualizado
+PUT {{url}}/posts/6
 Content-Type: application/json
 
 {
     "titulo": "Inauguración: Bienvenidos a este, vuestro blog",
-    "descripcion": "Mas posts de inicio",
+    "descripcion": "Evento de inicio",
     "categoria": "eventos",
     "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos deleniti facilis, consequatur fugiat commodi. Vitae necessitatibus ipsum quis animi quos minima, natus in, ab dolores voluptatum consectetur amet quae. \n Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos necessitatibus laudantium ratione sint ullam autem unde architecto ad placeat eius vel iure, neque quae esse saepe repudiandae, quod eligendi deleniti? \n Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id excepturi dolores officia aliquid quaerat consequatur rem unde, doloribus vel obcaecati iure esse? Mollitia commodi et cumque nesciunt facilis obcaecati eos. \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum architecto accusantium maiores ullam nobis molestiae quam, voluptatem assumenda saepe voluptates adipisci ut blanditiis corporis quibusdam exercitationem culpa eum recusandae! \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum repellendus illo necessitatibus dolore amet aliquam quis distinctio totam maxime reprehenderit fugiat numquam possimus, tenetur consequuntur laborum similique nobis. Omnis.",
     "autor_id": 2
