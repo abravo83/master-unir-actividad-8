@@ -4,7 +4,7 @@
 
 - PREREQUISITE: Having a MySQL server running locally.
 - Run `npm install` as usual to **install all dependencies**.
-- Use the `myblog.sql` file's (located on the projects root folder) content query to **install the DB**.
+- Use the `myblog.sql` file's (located on the projects root folder) content query to **install the DB** using your favourite MySQL client (I use MySQL WorkBench).
 - **_IMPORTANT_: CREATE YOUR OWN .env file**. Use the `.env_example` to **create** your own `.env` file on the project's root folder, that should contain access to your DB. The .env should have this structure
 
 ```
