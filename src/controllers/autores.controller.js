@@ -47,7 +47,7 @@ const putAutor = async (req, res, next) => {
     const { id } = req.params;
     const { nombre, email, imagen } = req.body;
 
-    const [result] = await updateAutor(id, { nombre, email, imagen });
+    const result = await updateAutor(id, { nombre, email, imagen });
 
     if (result) {
       return res.json(result);
