@@ -7,6 +7,9 @@
 ### Obtener todos los autores / Obtain all authors
 GET {{url}}/autores
 
+### Obtener un autor
+GET {{url}}/autores/2
+
 ### Crear un nuevo autor / Create a new author -- Devuelve el nuevo autor con su id
 POST {{url}}/autores
 Content-Type: application/json
