@@ -7,17 +7,7 @@
 ### Obtener todos los autores / Obtain all authors
 GET {{url}}/autores
 
-### Crear un nuevo autor / Create a new author
-POST {{url}}/autores
-Content-Type: application/json
-
-{
-    "nombre": "Laura_pi",
-    "email": "lau.pi@email.com",
-    "imagen": "3asaa2ssadsasda3981.jpg"
-}
-
-### Crear un nuevo autor / Create a new author
+### Crear un nuevo autor / Create a new author -- Devuelve el nuevo autor con su id
 POST {{url}}/autores
 Content-Type: application/json
 
@@ -37,9 +27,9 @@ Content-Type: application/json
     "imagen": "3asaa2ssadsasda3981.jpg"
 }
 
-### Borrar un autor / Erase an author
+### Borrar un autor / Erase an author -- Devuelve un mensaje informativo con el número de autores y posts borrados
 ###! OJO: También borra sus posts
-DELETE {{url}}/autores/4
+DELETE {{url}}/autores/7
 
 
 
@@ -62,8 +52,8 @@ POST {{url}}/posts
 Content-Type: application/json
 
 {
-    "titulo": "Inauguración: Bienvenidos a este, vuestro blog",
-    "descripcion": "Mas posts de inicio",
+    "titulo": "Cierre del Blog: Se acabó",
+    "descripcion": "Se acabó el blog",
     "categoria": "eventos",
     "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos deleniti facilis, consequatur fugiat commodi. Vitae necessitatibus ipsum quis animi quos minima, natus in, ab dolores voluptatum consectetur amet quae. \n Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos necessitatibus laudantium ratione sint ullam autem unde architecto ad placeat eius vel iure, neque quae esse saepe repudiandae, quod eligendi deleniti? \n Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id excepturi dolores officia aliquid quaerat consequatur rem unde, doloribus vel obcaecati iure esse? Mollitia commodi et cumque nesciunt facilis obcaecati eos. \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum architecto accusantium maiores ullam nobis molestiae quam, voluptatem assumenda saepe voluptates adipisci ut blanditiis corporis quibusdam exercitationem culpa eum recusandae! \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum repellendus illo necessitatibus dolore amet aliquam quis distinctio totam maxime reprehenderit fugiat numquam possimus, tenetur consequuntur laborum similique nobis. Omnis.",
     "autor_id": 2
@@ -80,3 +70,6 @@ Content-Type: application/json
     "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos deleniti facilis, consequatur fugiat commodi. Vitae necessitatibus ipsum quis animi quos minima, natus in, ab dolores voluptatum consectetur amet quae. \n Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos necessitatibus laudantium ratione sint ullam autem unde architecto ad placeat eius vel iure, neque quae esse saepe repudiandae, quod eligendi deleniti? \n Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id excepturi dolores officia aliquid quaerat consequatur rem unde, doloribus vel obcaecati iure esse? Mollitia commodi et cumque nesciunt facilis obcaecati eos. \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum architecto accusantium maiores ullam nobis molestiae quam, voluptatem assumenda saepe voluptates adipisci ut blanditiis corporis quibusdam exercitationem culpa eum recusandae! \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum repellendus illo necessitatibus dolore amet aliquam quis distinctio totam maxime reprehenderit fugiat numquam possimus, tenetur consequuntur laborum similique nobis. Omnis.",
     "autor_id": 2
 }
+
+### Borrar un post -- Devuelve un mensaje informativo confirmado si el post se ha borrado o no
+DELETE {{url}}/posts/11
