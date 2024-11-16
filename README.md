@@ -4,8 +4,8 @@
 
 - PREREQUISITE: Having a MySQL server running locally.
 - Run `npm install` as usual to **install all dependencies**.
-- Use the `myblog.sql` file content query to **install the DB**.
-- **CREATE YOUR OWN .env file**. Use the `.env_example` to **create** your own `.env` file that should contain access to your DB. The .env should have this structure
+- Use the `myblog.sql` file's (located on the projects root folder) content query to **install the DB**.
+- **_IMPORTANT_: CREATE YOUR OWN .env file**. Use the `.env_example` to **create** your own `.env` file on the project's root folder, that should contain access to your DB. The .env should have this structure
 
 ```
 
@@ -26,6 +26,10 @@ but the data within should be your own. Special attention to the DB\_ data. You 
 npm run start
 ```
 
+## To test the api locally
+
+I have included a testing file called `peticiones.rest`. This file is meant to use with the [REST Client VS Code Plugin](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for testing the API. You cans send and modify Action/Route on the go directly from the file opened in VS Code.
+
 ## API use Instructions
 
 _X means none, nothing_
@@ -34,7 +38,7 @@ _X means none, nothing_
 
 ### Get All Authors
 
-- GET /api/autores
+- Action/Route: GET /api/autores
 - Body: X
 - Headers: X
 
@@ -42,7 +46,7 @@ _X means none, nothing_
 
 ### Get Author By Id
 
-- GET /api/autores/id (where id is a number that identifies the author)
+- Action/Route: GET /api/autores/id (where id is a number that identifies the author)
 - Body: X
 - Headers: X
 
@@ -50,7 +54,7 @@ _X means none, nothing_
 
 ### Post a new Author
 
-- POST /api/autores
+- Action/Route: POST /api/autores
 - Body:
   {
   "nombre": string,
@@ -63,7 +67,7 @@ _X means none, nothing_
 
 ### Update an Author
 
-- PUT /api/autores/id (where id is a number that identifies the author)
+- Action/Route: PUT /api/autores/id (where id is a number that identifies the author)
 - Body:
   {
   "nombre": string,
@@ -76,7 +80,7 @@ _X means none, nothing_
 
 ### Delete an Author (Also removes every post of this author)
 
-- DELETE /api/autores/id (where id is a number that identifies the author)
+- Action/Route: DELETE /api/autores/id (where id is a number that identifies the author)
 - Body: X
 - Headers: X
 
@@ -86,7 +90,7 @@ _X means none, nothing_
 
 ### Get All posts
 
-- GET /api/posts
+- Action/Route: GET /api/posts
 - Body: X
 - Headers: X
 
@@ -94,7 +98,7 @@ _X means none, nothing_
 
 ### Get posts by author
 
-- GET /api/posts/autor/id (where id is a number that identifies the author of those posts)
+- Action/Route: GET /api/posts/autor/id (where id is a number that identifies the author of those posts)
 - Body: X
 - Headers: X
 
@@ -102,7 +106,7 @@ _X means none, nothing_
 
 ### Get post By Id
 
-- GET /api/posts/id (where id is a number that identifies the)
+- Action/Route: GET /api/posts/id (where id is a number that identifies the)
 - Body: X
 - Headers: X
 
@@ -110,7 +114,7 @@ _X means none, nothing_
 
 ### Post a new Post
 
-- POST /api/posts
+- Action/Route: POST /api/posts
 - Body:
   {
   "titulo": string,
@@ -125,7 +129,7 @@ _X means none, nothing_
 
 ### Update a Post
 
-- PUT /api/posts/id (where id is a number that identifies the post)
+- Action/Route: PUT /api/posts/id (where id is a number that identifies the post)
 - Body:
   {
   "titulo": string,
@@ -140,7 +144,7 @@ _X means none, nothing_
 
 ### Delete a Post (Also removes every post of this Post)
 
-- DELETE /api/posts/id (where id is a number that identifies the post)
+- Action/Route: DELETE /api/posts/id (where id is a number that identifies the post)
 - Body: X
 - Headers: X
 
