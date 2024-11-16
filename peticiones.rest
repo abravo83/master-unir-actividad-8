@@ -1,0 +1,82 @@
+@url = http://localhost:3000/api
+
+#############
+## Autores ##
+#############
+
+### Obtener todos los autores / Obtain all authors
+GET {{url}}/autores
+
+### Crear un nuevo autor / Create a new author
+POST {{url}}/autores
+Content-Type: application/json
+
+{
+    "nombre": "Laura_pi",
+    "email": "lau.pi@email.com",
+    "imagen": "3asaa2ssadsasda3981.jpg"
+}
+
+### Crear un nuevo autor / Create a new author
+POST {{url}}/autores
+Content-Type: application/json
+
+{
+    "nombre": "Test_author",
+    "email": "test.au@email.com",
+    "imagen": "389a9s6586sasda3981.jpg"
+}
+
+### Actualizar un autor / Update an author data
+PUT {{url}}/autores/3
+Content-Type: application/json
+
+{
+    "nombre": "Laura_piano",
+    "email": "lau.pi@email.com",
+    "imagen": "3asaa2ssadsasda3981.jpg"
+}
+
+### Borrar un autor / Erase an author
+###! OJO: También borra sus posts
+DELETE {{url}}/autores/4
+
+
+
+#############
+##  Posts  ##
+#############
+
+### Obtener todos los posts
+GET {{url}}/posts
+
+### Obtener un post
+GET {{url}}/posts/2
+
+### Obtener los posts de un autor
+GET {{url}}/posts/autor/3
+
+
+### Crear nuevo post
+POST {{url}}/posts
+Content-Type: application/json
+
+{
+    "titulo": "Inauguración: Bienvenidos a este, vuestro blog",
+    "descripcion": "Mas posts de inicio",
+    "categoria": "eventos",
+    "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos deleniti facilis, consequatur fugiat commodi. Vitae necessitatibus ipsum quis animi quos minima, natus in, ab dolores voluptatum consectetur amet quae. \n Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos necessitatibus laudantium ratione sint ullam autem unde architecto ad placeat eius vel iure, neque quae esse saepe repudiandae, quod eligendi deleniti? \n Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id excepturi dolores officia aliquid quaerat consequatur rem unde, doloribus vel obcaecati iure esse? Mollitia commodi et cumque nesciunt facilis obcaecati eos. \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum architecto accusantium maiores ullam nobis molestiae quam, voluptatem assumenda saepe voluptates adipisci ut blanditiis corporis quibusdam exercitationem culpa eum recusandae! \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum repellendus illo necessitatibus dolore amet aliquam quis distinctio totam maxime reprehenderit fugiat numquam possimus, tenetur consequuntur laborum similique nobis. Omnis.",
+    "autor_id": 2
+}
+
+### Actualizar post / Update post
+POST {{url}}/posts
+Content-Type: application/json
+
+{
+    "titulo": "Inauguración: Bienvenidos a este, vuestro blog",
+    "descripcion": "Mas posts de inicio",
+    "categoria": "eventos",
+    "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos deleniti facilis, consequatur fugiat commodi. Vitae necessitatibus ipsum quis animi quos minima, natus in, ab dolores voluptatum consectetur amet quae. \n Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos necessitatibus laudantium ratione sint ullam autem unde architecto ad placeat eius vel iure, neque quae esse saepe repudiandae, quod eligendi deleniti? \n Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id excepturi dolores officia aliquid quaerat consequatur rem unde, doloribus vel obcaecati iure esse? Mollitia commodi et cumque nesciunt facilis obcaecati eos. \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum architecto accusantium maiores ullam nobis molestiae quam, voluptatem assumenda saepe voluptates adipisci ut blanditiis corporis quibusdam exercitationem culpa eum recusandae! \n Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum repellendus illo necessitatibus dolore amet aliquam quis distinctio totam maxime reprehenderit fugiat numquam possimus, tenetur consequuntur laborum similique nobis. Omnis.",
+    "autor_id": 2
+}
