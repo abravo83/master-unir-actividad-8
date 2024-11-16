@@ -28,7 +28,7 @@ npm run start
 
 ## To test the api locally
 
-I have included a testing file called `peticiones.rest`. This file is meant to use with the [REST Client VS Code Plugin](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for testing the API. You cans send and modify Action/Route on the go directly from the file opened in VS Code.
+I have included a testing file called `peticiones.rest`. This file is meant to be used with the [REST Client VS Code Plugin](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for testing the API. You cans send and modify Action/Route on the go directly from the file opened in VS Code.
 
 ## API use Instructions
 
