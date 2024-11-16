@@ -4,6 +4,7 @@ const {
   getPostById,
   createPost,
   dropPost,
+  updatePost,
 } = require("../models/Post.model");
 
 const getPostsCtrl = async (req, res, next) => {
@@ -44,11 +45,12 @@ const getPostByIdCtrl = async (req, res, next) => {
 const updatePostCtrl = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { titulo, descripcion, categoria, autor_id } = req.body;
-    const [result] = await updatePost(id, {
+    const { titulo, descripcion, categoria, texto, autor_id } = req.body;
+    const result = await updatePost(id, {
       titulo,
       descripcion,
       categoria,
+      texto,
       autor_id,
     });
 
