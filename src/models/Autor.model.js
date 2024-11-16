@@ -36,8 +36,17 @@ async function updateAutor(id, { nombre, email, imagen }) {
 }
 
 async function dropAutor(id) {
-  const [result] = await pool.query(`DELETE FROM autores WHERE id = ?`, [id]);
-  return result.affectedRows > 0 || null;
+  const [resultPosts] = await pool.query(
+    `DELETE FROM posts WHERE autor_id = ?`,
+    [id]
+  );
+  const [resultAutores] = await pool.query(`DELETE FROM autores WHERE id = ?`, [
+    id,
+  ]);
+  return (
+    { autores: resultAutores.affectedRows, posts: resultPosts.affectedRows } ||
+    null
+  );
 }
 
 module.exports = {
