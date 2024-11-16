@@ -19,9 +19,14 @@ const getAutores = async (req, res, next) => {
 const getAutor = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const [result] = await getAutorById(id);
+    const result = await getAutorById(id);
+
+    if (!result) {
+      return res.status(400).json({ message: "Error: El autor no existe" });
+    }
 
     return res.json(result);
+    // --
   } catch (error) {
     next(error);
   }
